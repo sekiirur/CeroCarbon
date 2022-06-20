@@ -1,0 +1,41 @@
+
+.carousel {
+    display: flex;
+    /* background-color: rgb(215, 245, 215); */
+    justify-content: center;
+
+}
+.descripcion {
+ 
+ flex-flow: column;
+ float: left;
+ width: 50%;
+ /* background-color: lightcyan; */
+ padding:30px;
+ margin :10px;
+}
+.imagen {
+    width: auto;
+    height: auto;
+}
+.services{
+    display: inline-flex;
+    flex-wrap: nowrap;
+}
+.service{
+    margin-left: 30%;
+}
+
+.descript{
+    display:flex;
+    /* background-color: lightsalmon; */
+    justify-content: center;
+    margin-top:10px;
+}
+.news{
+    padding:30px;
+    background-color: #DEA057;
+}
+.general{
+    background-color:#FCFFE7;
+}

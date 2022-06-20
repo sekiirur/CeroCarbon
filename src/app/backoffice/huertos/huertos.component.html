@@ -1,0 +1,28 @@
+<div class="container">
+    <a routerLink="/formularioHuertoNew" class="btn btn-primary btn-float">
+        Añadir nuevo
+    </a>
+    <br>
+    <br>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Huerto</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let a of listaHuertos">
+                <td>{{a.nombre}}</td>
+                <td>{{a.alquilado}}</td>
+                <td>
+                    <button type="button" class="m-1 btn btn-danger">Eliminar</button>
+                    <button type="button" class="m-1 btn btn-light">Editar</button>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

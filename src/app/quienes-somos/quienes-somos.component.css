@@ -1,0 +1,35 @@
+.carousel {
+    display: flex;
+    background-color: lightgreen;
+    justify-content: center;
+
+}
+
+.imagen {
+    padding: 200px;
+}
+
+.dondeEstamos{
+    display:flex;
+    background-color: lightblue;
+    padding:40px;
+}
+
+.descript{
+    display:flex;
+    background-color:#FCFFE7;
+    justify-content:flex-start;
+    padding-right:100px;
+}
+
+.text{
+    padding:50px;
+}
+
+.lateral{
+    margin:50px;
+    background-color: aqua;
+    width:100%;
+    height: 200px;
+
+}

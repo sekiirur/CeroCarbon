@@ -1,0 +1,7 @@
+.alquiler {
+    display: flex;
+    background-color: lightgreen;
+    justify-content: center;
+    padding:300px;
+    border-top: 3px solid orange;
+}

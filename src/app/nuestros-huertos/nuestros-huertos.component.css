@@ -1,0 +1,27 @@
+.carousel {
+    display: flex;
+    background-color: lightgreen;
+    justify-content: center;
+
+}
+
+.imagen {
+    padding: 200px;
+}
+
+.dondestamos{
+    display:flex;
+    background-color: lightblue;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.descript{
+    display:flex;
+    background-color: lightsalmon;
+    justify-content: center;
+    margin-top:10px;
+}
+.text{
+    padding:50px;
+}
