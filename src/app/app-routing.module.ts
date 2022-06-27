@@ -22,7 +22,7 @@ const routes: Routes = [
   {path:'gestionServicios', component: ServiciosComponent},
   {path:'gestionUsuarios', component: UsuariosComponent},
   {path:'formularioHuertoNew', component: FormularioHuertoNewComponent},
-  {path:'formulariohuertoEdit/:huertoID', component: FormularioHuertoNewComponent}
+  {path:'formularioHuertoEdit/:huertoID', component: FormularioHuertoNewComponent}
 
 ];
 

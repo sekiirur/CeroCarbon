@@ -1,24 +1,30 @@
 <div class="container mt-1">
 
-    <h2 *ngIf="!modoCreacion">Crear Huerto </h2>
-    <!-- <h2 *ngIf="!modoCreacion">Modificar Huerto</h2> -->
-    <form action="" class="mt-1">
+    <h2 *ngIf="modoAlta">Crear Huerto </h2>
+    <h2 *ngIf="!modoAlta">Modificar Huerto</h2>
+    <div class="alert alert-success" role="alert" *ngIf="success">
+        {{mensaje}}
+    </div>
+    <div class="alert alert-danger" role="alert" *ngIf="error">
+        {{mensaje}}
+    </div>
+    <form action="" class="mt-1" name="huertoForm" role="form" novalidate #editForm="ngForm" autocomplete="off">
         <div class="mb-3 mt-3">
             <label for="id" class="form-label">id:</label>
-            <input type="text" class="form-control" readonly [(ngModel)]="huerto.id">
+            <input type="text" class="form-control" name="id" readonly [(ngModel)]="huerto.id">
         </div>
         <div class="mb-3 mt-3">
-            <label for="nombre" class="form-label">Nombre:</label>
-            <input type="text" class="form-control" [(ngModel)]="huerto.nombre">
+            <label for="nombre" class="form-label">Nombre<span style="color:red">*</span>:</label>
+            <input type="text" class="form-control" name="nombre" [(ngModel)]="huerto.nombre" required>
         </div>
         <div class="mb-3 mt-3">
-            <input type="checkbox" class="form-check-input" name="alquilado">
-            <label for="alquilado" class="form-label" [(ngModel)]="huerto.alquilado">Alquilado</label>
+            <input type="checkbox" class="form-check-input" name="alquilado" [(ngModel)]="huerto.alquilado">
+            <label for="alquilado" class="form-label">Alquilado</label>
         </div>
     </form>
 
     <div class="d-flex justify-content-between mb-3">
-        <button class="btn btn-primary" (click)="guardar()">Guardar</button>
+        <button [disabled]="editForm.form.invalid" class="btn btn-primary" (click)="guardar()">Guardar</button>
         <a routerLink="/gestionHuertos"><button class="btn btn-secondary">Volver</button></a>
     </div>
     

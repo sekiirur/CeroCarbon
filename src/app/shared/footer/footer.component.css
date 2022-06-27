@@ -1,11 +1,10 @@
 .footerContainer{
+    position:absolute;
     height: 100px;
     width: 100%;
-    background-color:#E0D8B0;
+    background-color:#91C788;
     display:flex;
     bottom:0;
-    margin-top:auto;
-    
 }
 .credits{
     margin-left: 40px;   

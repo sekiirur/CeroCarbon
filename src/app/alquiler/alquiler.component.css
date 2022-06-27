@@ -1,7 +1,14 @@
 .alquiler {
-    display: flex;
-    background-color: lightgreen;
-    justify-content: center;
-    padding:300px;
-    border-top: 3px solid orange;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
 }
+
+.btn-pag{
+    width: 100%;
+    text-align:center;
+    display:flex;
+    justify-content: center;
+
+}
+

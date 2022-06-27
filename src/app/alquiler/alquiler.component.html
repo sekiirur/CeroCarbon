@@ -1,78 +1,29 @@
-<div class="container ">
-    <!-- <div class="contenido">
-            <div class="item" *ngFor="let huerto of listaHuerto">
-                <imte a imprimr></item a imprimir>
-            </div>
-        </div>-->
-    <div class="row">
-        <div class="card col" style="margin:10px;padding:auto;width:18rem; height:20rem">
-            <img [src]="huertoImg" alt="imagen" />
-            <div class="card-body">
-                <h5>huerto Castilla</h5>
-                <p class="card-text">
-                    Esto es un texto del huerto, datos
-                </p>
-                <a href="" class="btn btn-primary">Alquilar Huerto</a>
-            </div>
+<div class="container">
+    <div class="contenido mb-5 pb-5">
+      <div class="btn-pag mb-5">
+         <h1>Alquiler de huertos</h1>
+        </div>
+        <div class="btn-pag mb5">
+          Escoge entre nuestros huertos disponibles y alquila cualquiera de ellos, elige el que más te guste y comienza a disfrutar de tu nuevo huerto. <br>(solo se visualizarán los que NO están alquilados)
+        </div>
+        <hr class="border-success border-5 opacity-50">
+        <div class="alert alert-success" role="alert" *ngIf="success">
+          {{message}}
+      </div>
+        <div class="item alquiler" *ngFor="let huerto of listaHuertos" [hidden]="huerto.alquilado">
+            <div class="card ml-4 mr-4 mt-5 mb-5" style="width: 18rem;">
+                <img [src]="huertoImg" alt="imagen" class="card-img-top" height="200px"/>
+                <div class="card-body">
+                  <h5 class="card-title">Huerto {{huerto.nombre}}</h5>
+                  <!-- <p>{{huerto.id}}</p> -->
+                  <p class="card-text">Alquilado: {{!huerto.alquilado?'No':'Si'}}</p>
+                  <button class="btn btn-success" (click)="alquilarHuerto(huerto.id+'', huerto.nombre, true)">Alquilar Huerto</button>
+                </div>
+              </div>
 
         </div>
-        <div class="card col" style="margin:10px;padding:auto;width:18rem; height:20rem">
-            <img [src]="huertoImg" alt="imagen" />
-            <div class="card-body">
-                <h5>huerto Castilla</h5>
-                <p class="card-text">
-                    Esto es un texto del huerto, datos
-                </p>
-                <a href="" class="btn btn-primary">Alquilar Huerto</a>
-            </div>
 
-        </div>
-        <div class="card col" style="margin:10px;padding:auto;width:18rem; height:20rem">
-            <img [src]="huertoImg" alt="imagen" />
-            <div class="card-body">
-                <h5>huerto Castilla</h5>
-                <p class="card-text">
-                    Esto es un texto del huerto, datos
-                </p>
-                <a href="" class="btn btn-primary">Alquilar Huerto</a>
-            </div>
-
-        </div>
-    </div>
-    <div class="row">
-        <div class="card col" style="margin:10px;padding:auto;width:18rem; height:20rem">
-            <img [src]="huertoImg" alt="imagen" />
-            <div class="card-body">
-                <h5>huerto Castilla</h5>
-                <p class="card-text">
-                    Esto es un texto del huerto, datos
-                </p>
-                <a href="" class="btn btn-primary">Alquilar Huerto</a>
-            </div>
-
-        </div>
-        <div class="card col" style="margin:10px;padding:auto;width:18rem; height:20rem">
-            <img [src]="huertoImg" alt="imagen" />
-            <div class="card-body">
-                <h5>huerto Castilla</h5>
-                <p class="card-text">
-                    Esto es un texto del huerto, datos
-                </p>
-                <a href="" class="btn btn-primary">Alquilar Huerto</a>
-            </div>
-
-        </div>
-        <div class="card col" style="margin:10px;padding:auto;width:18rem; height:20rem">
-            <img [src]="huertoImg" alt="imagen" />
-            <div class="card-body">
-                <h5>huerto Castilla</h5>
-                <p class="card-text">
-                    Esto es un texto del huerto, datos
-                </p>
-                <a href="" class="btn btn-primary">Alquilar Huerto</a>
-            </div>
-
-        </div>
+        
     </div>
 
-    </div>
+</div>

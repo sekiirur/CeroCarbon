@@ -1,3 +1,27 @@
 .btn-float{
     float:right;
+
+}
+.btn-light{
+    background-color:#52734D;
+    border-color:#52734D;
+    color:white;
+}
+
+.btn-light:hover{
+    transition: background-color 0.3s ease-out;
+    background-color: #DDFFBC;
+    border-color:#DDFFBC;
+    color:black;
+}
+
+.btn-danger:hover{
+    transition:background-color 0.4s ease-out;
+    background-color:darkred;
+}
+.btn-pag{
+    width: 100%;
+    text-align:center;
+    display:flex;
+    justify-content: space-between;
 }

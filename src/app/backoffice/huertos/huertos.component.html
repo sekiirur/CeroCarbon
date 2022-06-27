@@ -1,28 +1,58 @@
 <div class="container">
-    <a routerLink="/formularioHuertoNew" class="btn btn-primary btn-float">
+    <a routerLink="/formularioHuertoNew" class="btn btn-success btn-float">
         Añadir nuevo
     </a>
     <br>
     <br>
-    <table class="table table-striped table-hover">
+    <div class="alert alert-warning" *ngIf="listaHuertos.length == 0">No existen huertos</div>
+    <div class="alert alert-danger" *ngIf="error && mensaje!=''">{{mensaje}}</div>
+    <table class="table table-striped table-hover" *ngIf="listaHuertos && listaHuertos.length > 0">
         <thead>
             <tr>
-                <th scope="col">Huerto</th>
-                <th scope="col">Nombre</th>
+                    <th scope="col" (click)="cambiarOrden('id')">ID<i class="fa-thin fa-sort"></i></th>
+                <th scope="col" (click)="cambiarOrden('nombre')">Huerto</th>
+                <th scope="col" (click)="cambiarOrden('alquilado')">Alquilado</th>
                 <th scope="col">acciones</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let a of listaHuertos">
-                <td>{{a.nombre}}</td>
-                <td>{{a.alquilado}}</td>
+                <td >{{a.id}}</td>
+                <td >{{a.nombre}}</td>
+                <td >{{a.alquilado}}</td>
                 <td>
-                    <button type="button" class="m-1 btn btn-danger">Eliminar</button>
-                    <button type="button" class="m-1 btn btn-light">Editar</button>
-
+                    <a [routerLink]="['/formularioHuertoEdit',a.id]">
+                        <button type="button" class="m-1 btn btn-light">Editar</button>
+                    </a>
+                    <button type="button" class="m-1 btn btn-danger" (click)="abrirPopUpEliminar(a.id||2)">Eliminar</button>
+                    
                 </td>
             </tr>
         </tbody>
     </table>
-
+    <div class="btn-pag mb-5">
+      <button class="btn btn-success" (click)="navegarPrev()" [disabled]="first">Anterior</button>
+      <span>Página {{page+1}} de {{totalPaginas}} - Elementos totales: {{totalHuertos}}</span>
+      <button class="btn btn-success" (click)="navegarNext()"[disabled]="last">Siguiente</button>
+    </div>
 </div>
+
+<div class="modal" id="ConfirmarEliminacion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" [ngStyle]="{'display': display }">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Eliminar huerto</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="cerrarModalEliminar()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ¿Estás seguro de que quieres elimnar este huerto? Esta acción no tiene vuelta atrás.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-dismiss="modal" (click)="cerrarModalEliminar()">Cancelar</button>
+          <button type="button" class="btn btn-danger" (click)="confirmarEliminar(huertoEliminar)">Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </div>
